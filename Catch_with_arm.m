@@ -1,6 +1,13 @@
 clc;
 clear all;
 close all;
+
+
+% 获取当前目录及其所有子文件夹的路径
+allPaths = genpath(pwd);
+
+% 将路径添加到 MATLAB 搜索路径中
+addpath(allPaths);
 global Link_1
 global Link_2
 global Link_3

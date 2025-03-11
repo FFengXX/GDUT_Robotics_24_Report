@@ -2,6 +2,11 @@ clc;
 clear all;
 close all;
 num=0;
+% 获取当前目录及其所有子文件夹的路径
+allPaths = genpath(pwd);
+
+% 将路径添加到 MATLAB 搜索路径中
+addpath(allPaths);
 
 % 定义物体参数
 mass = 0.5; % 物体质量，单位kg
@@ -12,9 +17,9 @@ learning_rate = 0.9;
 ToDeg = 180/pi;
 ToRad = pi/180;
 % 加载手指的工作空间点
-load('workspace_points1.mat', 'workspace_points1');
-load('workspace_points2.mat', 'workspace_points2');
-load('workspace_points3.mat', 'workspace_points3');
+load('depend/workspace_points1.mat', 'workspace_points1');
+load('depend/workspace_points2.mat', 'workspace_points2');
+load('depend/workspace_points3.mat', 'workspace_points3');
 % 使用Delaunay三角剖分检查点是否在多边形体内
 % dt1 = delaunayTriangulation(workspace_points1);
 % dt2 = delaunayTriangulation(workspace_points2);
